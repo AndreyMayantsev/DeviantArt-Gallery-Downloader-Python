@@ -1,0 +1,115 @@
+<HTML> 
+<HEAD>
+	<TITLE>DAGDownloader</TITLE>
+	<link rel="stylesheet" href="da.css">
+	<link rel="stylesheet" href="daload.css">
+	<script type="text/javascript" src="eel.js"></script>
+	<script type="text/javascript" src="jquery-3.4.1.js"></script>
+</script>
+</HEAD>
+<BODY>
+	<div class="box">
+		
+		<div id="mainF">
+			
+			<br>
+			<input type = "text" id="username">
+			<h6>Enter username and click Download button:</h6>
+			<input type = "submit" id="startbutton" class="startbutton" value="Download" click="start_web()">
+		
+		</div>
+	
+		<div id="userinfo">
+			<img src="_temp.jpg" id="userfoto" class="userfotocl"><br>
+			<b><p id="name" class="label">Username</p></b>
+			<p id="gallerysize" class="label">100 Arts</p>
+		</div>	
+		
+		<div id = "downloadF">
+			<input type = "submit" id="downloadbutton" class="okbuttoncl" value="Download" click="start_web()"><br>
+		</div>
+		
+		<div id = "downloadP">
+			<progress id="pbar" value="0" max="100"></progress><br><p id="foto" class="label">name</p>
+		</div>
+	
+	</div>
+	
+	<script>
+		//Shablons: Loading
+		
+		let startbutton = document.querySelector("#startbutton");
+		startbutton.addEventListener("click", start_web);
+		
+		function start_web() {
+			let usernameSelector = document.querySelector("#username");
+			let username = usernameSelector.value;
+			if(username.length > 2) {
+				eel.start_form(username);
+				console.log('eel <= '+username);
+			} else {
+				usernameSelector.style.backgroundColor = "#FF7F50";
+			}
+		}
+		
+		window.addEventListener('beforeunload', function() {
+			console.log('Aborted...')
+			eel.abort_process();
+		});
+		
+		$(document).ready( function() {
+			$('#downloadP').hide();
+			$('#downloadF').hide();
+			$('#userinfo').hide();
+		})
+		
+		eel.expose(jspreload);
+		function jspreload(num) {
+			startbutton.value = "Loading...";
+			startbutton.disabled = true;
+			startbutton.className = 'disabledbuttoncl';
+		}
+
+		eel.expose(errormsg);
+		function errormsg(info) {
+			alert(info);
+			startbutton.disabled = false;
+			startbutton.className = 'startbutton';
+			startbutton.value = "Download";
+		}
+		
+		eel.expose(setnum);
+		function setnum(num) {
+			startbutton.value = "Founded: " + num;
+		}
+	
+		eel.expose(download_start)
+		function download_start(username, maxposition) {
+			console.log(username, maxposition);
+			$('#mainF').hide();
+			$('#userfoto').attr('src', '_temp.jpg');
+			$('#name').text(username);
+			$('#downloadF').show();
+			$('#userinfo').show();
+			$('#gallerysize').text(maxposition + ' Arts');
+			$('#downloadbutton').click(function() {
+				$('#downloadP').show();
+				$('#downloadF').hide();
+				eel.start_download(username);
+			});
+		}
+		
+		eel.expose(downloading)
+		function downloading(picturename, position, maxposition) {
+			console.log(picturename, position, maxposition);
+			$('#foto').text(picturename);
+			$('#pbar').attr('max', maxposition);
+			$('#pbar').attr('value', position + 1);
+			$('#gallerysize').text(maxposition + ' Arts');
+		}
+		
+
+		
+	</script>
+</BODY>
+</HTML>

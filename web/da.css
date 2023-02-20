@@ -1,0 +1,80 @@
+* {
+	margin: 0;
+	padding: 0;
+}
+
+h6 {
+	color: #E0FFFF;
+	font-family: Calibri;
+	margin: 2;
+	padding: 2;
+	font-size: 14;
+}
+
+.label {
+	color: #000;
+	font-family: Calibri;
+	font-size: 18;
+}
+
+body {
+	background-image: url(./bkg_dark.jpg);
+}
+
+.box {
+	opacity: 0.9;
+	margin: 100px auto;
+	text-align: center;
+	background-color: #4682B4;
+	border-radius: 4px;
+	width: 350px;
+	padding: 10px;
+	box-shadow: 0 0 10px rgba(0,1,0,0.5);
+}
+
+#username {
+	padding: 10px;
+	margin: 10px;
+	background-color: #B0C4DE;
+	color: #191970;
+	outline: 0;
+	border: 0;
+	border-bottom: 2px solid #00CED1;
+	border-radius: 4px;
+	font-size: 1.2em;
+	text-align: center;
+}
+
+.startbutton {
+	padding: 10px;
+	margin: 10px;
+	background-color: #5F9EA0;
+	color: #fff;
+	outline: 0;
+	border: 0;
+	border-bottom: 2px solid #00CED1;
+	border-radius: 4px;
+	font-size: 1.2em;
+	text-align: center;
+	cursor: pointer;
+	width: 150px;
+}
+
+.startbutton:hover {
+	color: #fff;
+	background-color: #CE7A05;
+}
+
+.disabledbuttoncl {
+	padding: 10px;
+	margin: 10px;
+	background-color: #D3D3D3;
+	color: #fff;
+	outline: 0;
+	border: 0;
+	border-radius: 4px;
+	font-size: 1.2em;
+	text-align: center;
+	cursor: pointer;
+	width: 150px;
+}

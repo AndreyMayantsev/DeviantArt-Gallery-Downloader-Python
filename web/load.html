@@ -1,0 +1,39 @@
+<HTML>
+<HEAD>
+	<TITLE>DAGDownloader</TITLE>
+	<link rel="stylesheet" href="daload.css">
+	<link rel="stylesheet" href="da.css">
+	<script type="text/javascript" src="eel.js"></script>
+</script>
+</HEAD>
+<BODY>
+	<div class="box" id="mainF">
+		<div id="userinfo">
+			<img src="_temp.jpg" id="userfoto" class="userfotocl">
+			<br>
+			<b><p id="name" class="label">Username</p></b>
+			<p id="gallerysize" class="label">100 Arts</p>
+		</div>	
+		<div id = "downloadF">
+			<input type = "submit" id="downloadbutton" class="okbuttoncl" value="Download" click="start_web()"><br>
+		</div>
+		<div id = "downloadP">
+			<progress id="pbar" value="0" max="100"></progress><br><p id="foto" class="label">name</p>
+		</div>
+			
+	</div>
+
+	<script>
+
+		let startbutton = document.querySelector("#startbutton");
+		startbutton.addEventListener("click", start_web);
+
+		function start_web() {
+			let username = document.querySelector("#username").value;
+			eel.start_form(username);
+		}
+
+	</script>
+</BODY>
+</HTML>
+			<progress id="pbar" value="0" max="100"></progress><br><p id="foto" class="label">name</p>

@@ -1,0 +1,77 @@
+* {
+	margin: 0;
+	padding: 0;
+}
+
+progress {
+	padding: 12px;
+	height: 32px;
+	width: 200px;
+}
+
+.leftload {
+	float: left;
+	background-color: #4682B4;
+	border-radius: 12px;
+	box-shadow: 0 0 10px rgba(0,1,0,0.5);
+	padding: 10px;
+	width: 100px;
+}
+
+.rightload {
+	float: right;
+	background-color: #4682B4;
+	border-radius: 10px;
+	box-shadow: 0 0 10px rgba(0,1,0,0.5);
+	padding: 10px;
+	width: 350px;
+}
+
+.userfotocl {
+	padding: 8;
+	border-radius: 23px;
+	
+}
+
+.okbuttoncl {
+	padding: 10px;
+	margin: 10px;
+	background-color: #5F9EA0;
+	color: #fff;
+	outline: 0;
+	border: 0;
+	border-bottom: 2px solid #00CED1;
+	border-radius: 4px;
+	font-size: 1.2em;
+	text-align: center;
+	cursor: pointer;
+	width: 120px;
+	height: 40px;
+}
+
+.okbuttoncl:hover {
+	color: #fff;
+	background-color: #CE7A05;
+}
+
+.cancelbuttoncl {
+	padding: 10px;
+	margin: 10px;
+	background-color: #FA8072;
+	color: #fff;
+	outline: 0;
+	border: 0;
+	border-bottom: 2px solid #00CED1;
+	border-radius: 4px;
+	font-size: 1.2em;
+	text-align: center;
+	cursor: pointer;
+	width: 90px;
+	
+}
+
+.cancelbuttoncl:hover {
+	color: #fff;
+	background-color: #CE7A05;
+}
+
